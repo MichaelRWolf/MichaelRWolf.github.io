@@ -20,6 +20,9 @@ jobs:
       with:
         ruby-version: 3.1
 
+    - name: Install Bundler
+      run: gem install bundler
+
     - name: Install dependencies
       run: bundle install
 
