@@ -12,8 +12,10 @@ bundle install
 bundle exec jekyll serve
 ```
 
-open https://MichaelRWolf.github.io
-open http://localhost:4000
+xxx
+- repo :: https://github.com/MichaelRWolf/MichaelRWolf.github.io
+- site :: https://MichaelRWolf.github.io
+- site (local) ::  http://localhost:4000
 
 ## (re)generating site
 
