@@ -51,6 +51,9 @@ jobs:
         mkdir -p _site/blog
         bundle exec jekyll build --source . --destination _site --config _config.yml --drafts
 
+    - name: List files for debugging
+      run: ls -la . bin/ _site/ _drafts/
+
     - name: Set permissions on _site
       run: chmod -R a-w _site
 

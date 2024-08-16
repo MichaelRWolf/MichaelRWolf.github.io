@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Directory containing posts
+POSTS_DIR="_posts"
+
+# Flag to track if any inconsistencies are found
+inconsistent=false
+
+# Iterate over each post file in the _posts directory
+for file in "$POSTS_DIR"/*.md; do
+  # Extract filename without extension
+  filename=$(basename "$file" .md)
+
+  # Extract date from filename (assumes format YYYY-MM-DD-title)
+  file_date=$(echo "$filename" | cut -d'-' -f1-3 | sed 's/-//g')
+
+  # Extract date from front matter
+  frontmatter_date=$(sed -n 's/^date: \(.*\)/\1/p' "$file" | cut -d'T' -f1)
+
+  # Compare file date with front matter date
+  if [ "$file_date" != "$frontmatter_date" ]; then
+    echo "Inconsistency found in $file:"
+    echo "  Filename date: $file_date"
+    echo "  Front matter date: $frontmatter_date"
+    inconsistent=true
+  fi
+done
+
+# Exit with error if inconsistencies were found
+if $inconsistent; then
+  echo "Inconsistencies detected. Please correct them."
+  exit 1
+else
+  echo "All dates are consistent."
+fi
