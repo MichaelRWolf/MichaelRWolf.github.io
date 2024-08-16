@@ -38,16 +38,7 @@ jobs:
         echo bundle check && bundle check &&
 
         # Display the dependency tree
-        echo bundle viz && bundle viz &&
-
-# Debug Bundler environment
-echo bundle env && bundle env
-
-
-        echo "bundle list" && bundle list &&
-        echo "" && bundle list &&
-        echo "bundle list" && bundle list &&
-        echo "bundle list" && bundle list &&
+        echo bundle viz && bundle viz
 
     - name: Install dependencies
       run: bundle install
