@@ -43,15 +43,38 @@ jobs:
         # Display the dependency tree
         # echo bundle viz; bundle graph
 
+
+
     - name: Build site
-      run: bundle exec jekyll build
+      run: |
+        rm -rf _site
+        mkdir -p _site/blog
+        bundle exec jekyll build --source . --destination _site --config _config.yml --drafts
+
+    - name: Set permissions on _site
+      run: chmod -R a-w _site
+
+    # - name: Build site
+    #   run: bundle exec jekyll build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: _site
         publish_branch: gh-pages
+        publish_dir: _site
+        allow_empty_commit: false
+        keep_files: false
+        force_orphan: false
+        enable_jekyll: false
+        disable_nojekyll: false
+
+    # - name: Deploy to GitHub Pages
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: _site
+    #     publish_branch: gh-pages
 
     # - name: Deploy to GitHub Pages
     #   uses: peaceiris/actions-gh-pages@v3
