@@ -23,6 +23,32 @@ jobs:
     - name: Install Bundler
       run: gem install bundler
 
+    - name: Debug bundle
+      run: |
+        echo ruby -v && ruby -v &&
+        echo bundle -v && bundle -v && 
+
+        # List all installed gems
+        echo bundle list && bundle list &&
+        
+        # Show detailed information about a specific gem
+        echo bundle show bundler && bundle show bundler &&
+                
+        # Check if all required gems are installed
+        echo bundle check && bundle check &&
+
+        # Display the dependency tree
+        echo bundle viz && bundle viz &&
+
+# Debug Bundler environment
+echo bundle env && bundle env
+
+
+        echo "bundle list" && bundle list &&
+        echo "" && bundle list &&
+        echo "bundle list" && bundle list &&
+        echo "bundle list" && bundle list &&
+
     - name: Install dependencies
       run: bundle install
 
