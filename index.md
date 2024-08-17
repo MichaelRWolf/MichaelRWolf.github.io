@@ -11,7 +11,6 @@ title: Welcome
 - [blog.htm](blog.html)
 
 
-
 # Welcome again
 
 <ul>
