@@ -1,6 +1,9 @@
 #!/bin/bash
 
 
+function warn() { echo "${@}" >&2; }
+
+
 function date_from_filename () {
     local f="${1}"
     echo "${f}" | 
@@ -26,22 +29,22 @@ function main () {
       date_from_front_matter=$( date_from_front_matter "${file}" )
 
       if [[ "${date_from_filename}" = '' ]] || [[ "${date_from_filename}" != "${date_from_front_matter}" ]]; then
-	echo "Inconsist or missing date info: ${file}"
-	echo "  Date From Filename:     '${date_from_filename}'"
-	echo "  Date From Front Matter: '${date_from_front_matter}'"
+	warn "Inconsist or missing date info: ${file}"
+	warn "  Date From Filename:     '${date_from_filename}'"
+	warn "  Date From Front Matter: '${date_from_front_matter}'"
 	inconsistent=true
       else
-	  # echo "Consistent|${file}|${filename}|${date_from_filename}|${date_from_front_matter}|"
+	  # warn "Consistent|${file}|${filename}|${date_from_filename}|${date_from_front_matter}|"
 	  :
       fi
     done
 
     # Exit with error if inconsistencies were found
     if $inconsistent; then
-      echo "Inconsistencies detected. Please correct them."
+      warn "Inconsistencies detected. Please correct them."
       exit 1
     else
-      echo "All dates are consistent."
+      warn "All dates are consistent."
     fi
 }
 
