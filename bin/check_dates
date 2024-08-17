@@ -8,6 +8,12 @@ function date_from_filename () {
 }
 
 
+function date_from_front_matter() {
+    local file="${1}"
+    cat "$file" |
+	perl -n -e '$front_matter .= $_ if /---/.../---/; END { print $1 if $front_matter =~ /date:\s+([0-9-]+)/;}'
+}
+
 
 function main () {
     # Directory containing posts
@@ -25,16 +31,16 @@ function main () {
       date_from_filename=$( date_from_filename "$filename" )
 
       # Extract date from front matter
-      frontmatter_date=$( cat "$file" | perl -n -e '$front_matter .= $_ if /---/.../---/; END { print $1 if $front_matter =~ /date:\s+([0-9-]+)/;}')
+      date_from_front_matter=$( date_from_front_matter "${file}" )
 
       # Compare file date with front matter date
-      if [[ "$date_from_filename" = '' ]] || [[ "$date_from_filename" != "$frontmatter_date" ]]; then
+      if [[ "$date_from_filename" = '' ]] || [[ "$date_from_filename" != "$date_from_front_matter" ]]; then
 	echo "Inconsist or missing date info: $file"
-	echo "  Date From Filename: '$date_from_filename'"
-	echo "  Front matter date:  '$frontmatter_date'"
+	echo "  Date From Filename:     '$date_from_filename'"
+	echo "  Date From Front Matter: '$date_from_front_matter'"
 	inconsistent=true
       else
-	  # echo "Consistent|$file|$filename|$date_from_filename|$frontmatter_date|"
+	  # echo "Consistent|$file|$filename|$date_from_filename|$date_from_front_matter|"
 	  :
       fi
     done
