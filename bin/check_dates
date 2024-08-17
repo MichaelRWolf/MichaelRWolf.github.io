@@ -10,37 +10,28 @@ function date_from_filename () {
 
 function date_from_front_matter() {
     local file="${1}"
-    cat "$file" |
+    cat "${file}" |
 	perl -n -e '$front_matter .= $_ if /---/.../---/; END { print $1 if $front_matter =~ /date:\s+([0-9-]+)/;}'
 }
 
 
 function main () {
-    # Directory containing posts
     POSTS_DIR="_posts"
-
-    # Flag to track if any inconsistencies are found
     inconsistent=false
 
-    # Iterate over each post file in the _posts directory
-    for file in "$POSTS_DIR"/*.md; do
-      # Extract filename without extension
+    for file in "${POSTS_DIR}"/*.md; do
       filename=$(basename "$file" .md)
 
-      # Extract date from filename (assumes format YYYY-MM-DD-title)
       date_from_filename=$( date_from_filename "$filename" )
-
-      # Extract date from front matter
       date_from_front_matter=$( date_from_front_matter "${file}" )
 
-      # Compare file date with front matter date
-      if [[ "$date_from_filename" = '' ]] || [[ "$date_from_filename" != "$date_from_front_matter" ]]; then
-	echo "Inconsist or missing date info: $file"
-	echo "  Date From Filename:     '$date_from_filename'"
-	echo "  Date From Front Matter: '$date_from_front_matter'"
+      if [[ "${date_from_filename}" = '' ]] || [[ "${date_from_filename}" != "${date_from_front_matter}" ]]; then
+	echo "Inconsist or missing date info: ${file}"
+	echo "  Date From Filename:     '${date_from_filename}'"
+	echo "  Date From Front Matter: '${date_from_front_matter}'"
 	inconsistent=true
       else
-	  # echo "Consistent|$file|$filename|$date_from_filename|$date_from_front_matter|"
+	  # echo "Consistent|${file}|${filename}|${date_from_filename}|${date_from_front_matter}|"
 	  :
       fi
     done
@@ -54,4 +45,4 @@ function main () {
     fi
 }
 
-main "$@"
+main "${@}"
