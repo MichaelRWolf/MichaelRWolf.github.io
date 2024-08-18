@@ -20,38 +20,38 @@ function date_from_front_matter() {
 
 function main () {
     POSTS_DIR="_posts"
-
+    
     file_count=0
     inconsistent_count=0
     {
 	shopt -s nullglob;
 	for file_path in "${POSTS_DIR}"/*.md ; do
 	    ((file_count = file_count + 1))
-
+	    
 	    file_basename=$(basename "$file_path" .md)
 	    
 	    date_from_filename=$( date_from_filename "$file_basename" )
 	    date_from_front_matter=$( date_from_front_matter "${file_path}" )
 	    
 	    if [[ "${date_from_filename}" = '' ]] || 
-	       [[ "${date_from_filename}" != "${date_from_front_matter}" ]]
+		   [[ "${date_from_filename}" != "${date_from_front_matter}" ]]
 	    then
 		warn "Inconsist or missing date info: ${file_path}"
 		warn "  Date From Filename:     '${date_from_filename}'"
 		warn "  Date From Front Matter: '${date_from_front_matter}'"
 		((inconsistent_count=inconsistent_count + 1))
 	    else
-		# warn "Consistent|${file_path}|${filename}|${date_from_filename}|${date_from_front_matter}|"
+		# warn "Consistent|${file_path}|${file_basename}|${date_from_filename}|${date_from_front_matter}|"
 		:
 	    fi
 	done
     }
-
+    
     if (($inconsistent_count > 0)); then
-      warn "Inconsistencies detected in $inconsistent_count file."
-      exit 1
+	warn "Inconsistencies detected in $inconsistent_count file."
+	exit 1
     else
-      warn "All dates are consistent in $file_count files."
+	warn "All dates are consistent in $file_count files."
     fi
 }
 
