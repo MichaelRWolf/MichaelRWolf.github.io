@@ -25,23 +25,23 @@ function main () {
     inconsistent_count=0
     {
 	shopt -s nullglob;
-	for file in "${POSTS_DIR}"/*.md ; do
+	for file_path in "${POSTS_DIR}"/*.md ; do
 	    ((file_count = file_count + 1))
 
-	    filename=$(basename "$file" .md)
+	    filename=$(basename "$file_path" .md)
 	    
 	    date_from_filename=$( date_from_filename "$filename" )
-	    date_from_front_matter=$( date_from_front_matter "${file}" )
+	    date_from_front_matter=$( date_from_front_matter "${file_path}" )
 	    
 	    if [[ "${date_from_filename}" = '' ]] || 
 	       [[ "${date_from_filename}" != "${date_from_front_matter}" ]]
 	    then
-		warn "Inconsist or missing date info: ${file}"
+		warn "Inconsist or missing date info: ${file_path}"
 		warn "  Date From Filename:     '${date_from_filename}'"
 		warn "  Date From Front Matter: '${date_from_front_matter}'"
 		((inconsistent_count=inconsistent_count + 1))
 	    else
-		# warn "Consistent|${file}|${filename}|${date_from_filename}|${date_from_front_matter}|"
+		# warn "Consistent|${file_path}|${filename}|${date_from_filename}|${date_from_front_matter}|"
 		:
 	    fi
 	done
