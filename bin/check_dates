@@ -20,11 +20,9 @@ function date_from_front_matter() {
 
 function main () {
     POSTS_DIR="_posts"
-    inconsistent=false
-    
 
-    export file_count=0
-    export inconsistent_count=0
+    file_count=0
+    inconsistent_count=0
     {
 	shopt -s nullglob;
 	for file in "${POSTS_DIR}"/*.md ; do
