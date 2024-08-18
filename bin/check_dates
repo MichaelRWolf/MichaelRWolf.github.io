@@ -28,9 +28,9 @@ function main () {
 	for file_path in "${POSTS_DIR}"/*.md ; do
 	    ((file_count = file_count + 1))
 
-	    filename=$(basename "$file_path" .md)
+	    file_basename=$(basename "$file_path" .md)
 	    
-	    date_from_filename=$( date_from_filename "$filename" )
+	    date_from_filename=$( date_from_filename "$file_basename" )
 	    date_from_front_matter=$( date_from_front_matter "${file_path}" )
 	    
 	    if [[ "${date_from_filename}" = '' ]] || 
