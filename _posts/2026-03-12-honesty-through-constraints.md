@@ -31,9 +31,9 @@ He puts it well:
 
 I've been working through other people's `SKILL.md` and `AGENT.md` files lately. The good ones (and this is a great one) distill decades of technical wisdom in comprehensible English.
 
-But GIGO also applies — if someone has unclear thinking, the garbage-in to the skill will generate garbage-out when applied through the AI.
+But GIGO also applies — if someone has unclear thinking, the garbage-in to the `SKILL.md` will generate garbage-out when the AI uses that skill.
 
-Good writing is an act of thinking clearly and communicating effectively, whether that is a murder-mystery, an AWS micro-service, or an AI skill.
+Good writing is an act of thinking clearly and communicating effectively, whether that is a murder-mystery, an AWS micro-service, or an AI `skill`.
 
 The GNU Manifesto argued, in 1985, that charging a royalty to use a shared language is inherently wrong — and that shouldn't have stopped teachers, novelists, or reporters from charging for their mastery of that free-of-charge language — English. That fundamental idea has created enormous value to humanity even as free and open have taken on new realms: Open Source, Open Data, Open Interfaces.
 
