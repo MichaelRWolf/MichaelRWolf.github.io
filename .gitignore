@@ -6,3 +6,5 @@ _site/
 .bundle/
 vendor/
 /gem_graph.png
+# Emacs backup files
+*~

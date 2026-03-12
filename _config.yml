@@ -4,3 +4,5 @@ theme: minima
 permalink: /:year/:month/:day/:title/
 url: "https://MichaelRWolf.github.io"
 baseurl: ""
+exclude:
+  - "**/*~"        # Emacs backup files
