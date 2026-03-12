@@ -5,15 +5,15 @@ date: 2026-03-12
 tags: [AI, TDD, SoftwareCraftsmanship, OpenSource, LLM]
 ---
 
-![Constraints allow testing](/images/Constraints_allow_testing.png)
+I used to get into a developer's head by reading their **books**...\
+Or I'd read their **code**.\
+Now that they don't write code, I read their **`SKILL.md` files**.
 
-I used to get into a developer's head by reading their books.
-Then I learned to read their code.
-Now I read their `SKILL.md` files.
+![Honest tests through forced constraints](/images/honesty-through-constraints_1200x628.png)
 
-These are plain English documents that developers write to instruct AI agents on how to behave. Not Python scripts. Not JSON configs. Just readable paragraphs — distillations of decades of hard-won expertise, accessible to anyone in a two-minute scan.
+A `SKILL.md` is a plain-text file that developers write (in **English**) to instruct AI agents on how to behave. Not Python scripts. Not JSON configs. Just readable paragraphs with occasional headers and examples - distillations of decades of hard-won expertise, accessible to anyone in a two-minute scan.
 
-Matt Pocock [skill_repo] recently wrote about the `SKILL.md` he built to teach an AI how to do test-driven development [tdd_skill]. His AI `skill` is easy reading — a testament to the human skills he's spent decades sharpening: coding, testing, writing, and teaching.
+Matt Pocock has a growing collection of AI `skills` in a GitHub repository (See [skill_repo]), and recently wrote about the one he built to teach an AI how to do test-driven development (See [tdd_skill]. The `tdd/SKILL.md` file is easy reading, but conveys a lot of complex technical guidance to the AI — a testament to the human skills he's spent decades sharpening as a developer and writer.
 
 What's in it? A checklist of constraints:
 
