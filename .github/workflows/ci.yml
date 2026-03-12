@@ -49,7 +49,7 @@ jobs:
       run: |
         rm -rf _site
         mkdir -p _site/blog
-        bundle exec jekyll build --source . --destination _site --config _config.yml --drafts
+        bundle exec jekyll build --source . --destination _site --config _config.yml
 
     - name: List files for debugging
       run: ls -la . bin/ _site/ _drafts/
