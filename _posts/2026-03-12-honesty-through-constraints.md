@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Getting into the head of a developer"
+title: "Getting into the head of an AI developer"
 date: 2026-03-12
 tags: [AI, TDD, SoftwareCraftsmanship, OpenSource, LLM]
 ---
@@ -53,4 +53,4 @@ References:
 
 ---
 
-#AI #AISkills #TDD #SoftwareCraftsmanship #OpenSource #LLM #AgentDrivenDevelopment
+ #AI #AISkills #TDD #SoftwareCraftsmanship #OpenSource #LLM #AgentDrivenDevelopment

@@ -1,6 +1,6 @@
 title: All Mammals Learn by Playing
 description: The creative play space of Michael R. Wolf
-theme: jekyll-theme-cayman
+theme: minima
 permalink: /:year/:month/:day/:title/
 url: "https://MichaelRWolf.github.io"
 baseurl: ""

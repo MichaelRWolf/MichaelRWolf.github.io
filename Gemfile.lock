@@ -16,7 +16,13 @@ GEM
     ffi (1.17.0-x86_64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
-    google-protobuf (4.27.5)
+    google-protobuf (4.27.5-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.27.5-x86_64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.27.5-x86_64-linux)
       bigdecimal
       rake (>= 13)
     http_parser.rb (0.8.0)
@@ -38,13 +44,12 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
+    jekyll-feed (0.17.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
     jekyll-seo-tag (2.8.0)
       jekyll (>= 3.8, < 5.0)
-    jekyll-theme-cayman (0.2.0)
-      jekyll (> 3.5, < 5.0)
-      jekyll-seo-tag (~> 2.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.4.0)
@@ -56,6 +61,10 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
+    minima (2.5.2)
+      jekyll (>= 3.5, < 5.0)
+      jekyll-feed (~> 0.9)
+      jekyll-seo-tag (~> 2.1)
     nokogiri (1.18.9-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.9-x86_64-darwin)
@@ -106,7 +115,7 @@ PLATFORMS
 DEPENDENCIES
   bundler-graph
   jekyll
-  jekyll-theme-cayman
+  minima
   nokogiri
   rack (~> 2.2.14)
   rspec
