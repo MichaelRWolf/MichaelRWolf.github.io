@@ -2,11 +2,7 @@
 Title: Code Reivews Communicate Context
 ---
 
-# LinkedIn post
-
-Points
-
-## Code Crafter's Common Challenge: Communicating Context
+# Code Crafter's Common Challenge: Communicating Context
 
 ## Setup of common code review practices
 
@@ -26,7 +22,10 @@ Points
 
 ## Intro
 
-In podcast episode #161 of "Legacy Code Rocks" (https://www.legacycode.rocks/episodes/161/), host Scott Ford and guest Chelsea Troy discuss Chelsea's claim that code reviews are a shell of what they could be if only the focus was on CONTEXT (i.e. regulatory constraints, avoiding buggy code, performance, backward compatability).  Focusing only on the code is to miss the core of a developer's job - find (or create) CONTEXT related to a  bug fix or feature request, then change the CODE while honoring the CONTEXT.
+In podcast ["Legacy Code Rocks (Episode 161)"](https://www.legacycode.rocks/episodes/161/), host Scott Ford and guest Chelsea Troy discuss Chelsea's claim that code reviews are a shell of what they could be if only the focus was on CONTEXT instead of CODE.  By "context", she means all the information that is required to make the code change: customer needs, business constraints, regulatory compliance, related code's strong and weak points etc, etc.  
+
+Focusing only on the code misses most of the developer's job - to find (or create) CONTEXT, then capture changes (in context) into the CODE, either preserving context for the future, or letting that context get dropped.
+
 
 This piece of writing started as a way for me to summarize their discussion.  It had such "juice" for me that I expanded it to share with others.
 
