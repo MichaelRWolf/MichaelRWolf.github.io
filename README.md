@@ -10,8 +10,11 @@
 ./bin/serve_localhost_4000
 ```
 
-This script pins Ruby via `.ruby-version`, activates it with `chruby`, installs
+This script uses `chruby-exec` to run each command under Ruby 3.1.3, installs
 `bundler`, runs `bundle install`, starts Jekyll, and opens the browser.
+
+`.ruby-version` is also present for tools that read it automatically (Cursor's
+Ruby LSP, chruby `auto.sh`).
 
 For drafts and live reload, run Jekyll directly:
 

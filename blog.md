@@ -1,8 +1,5 @@
 ---
-layout: default
+layout: home
 title: Blog
+permalink: /blog/
 ---
-
-# Blog
-
-Welcome to my blog! Here is where your blog posts will appear.  Maybe!
