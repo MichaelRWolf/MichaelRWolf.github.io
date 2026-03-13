@@ -15,18 +15,20 @@ layout: default
           <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
         </span>
       {%- endif -%}
-      {%- if page.tags.size > 0 -%}
-        &nbsp;&bull;&nbsp;
-        {%- for tag in page.tags -%}
-          <a class="post-tag" href="{{ site.baseurl }}/tags/{{ tag | slugify }}/">#{{ tag }}</a>{% unless forloop.last %}&nbsp;{% endunless %}
-        {%- endfor -%}
-      {%- endif -%}
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
+
+  {%- if page.tags.size > 0 -%}
+  <p class="post-tags">
+    {%- for tag in page.tags -%}
+      <a class="post-tag" href="{{ site.baseurl }}/tags/{{ tag | slugify }}/">#{{ tag }}</a>
+    {%- endfor -%}
+  </p>
+  {%- endif -%}
 
   <nav class="post-nav" style="display:flex; justify-content:space-between; margin-top:2em; padding-top:1em; border-top:1px solid #e8e8e8;">
     <div>

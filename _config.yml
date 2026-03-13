@@ -7,6 +7,10 @@ baseurl: ""
 exclude:
   - "**/*~"        # Emacs backup files
 
+minima:
+  header_pages:
+    - blog.md
+
 plugins:
   - jekyll-archives
 

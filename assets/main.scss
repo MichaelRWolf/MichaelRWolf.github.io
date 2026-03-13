@@ -1,0 +1,28 @@
+---
+---
+
+@import "minima";
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-top: 0.4em;
+}
+
+.post-tag {
+  display: inline-block;
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  border: 1px solid #c5d4f5;
+  border-radius: 1em;
+  padding: 0.15em 0.65em;
+  font-size: 0.8em;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #c5d4f5;
+    text-decoration: none;
+  }
+}
