@@ -15,53 +15,18 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Configure Pages
-      uses: actions/configure-pages@v5
-
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
+    - uses: actions/checkout@v4
+    - uses: actions/configure-pages@v5
+    - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.1
-
-    - name: Install Bundler
-      run: gem install bundler
-
-    - name: Install dependencies
-      run: bundle install
-
-    - name: Debug bundle
-      run: |
-        echo ruby -v; ruby -v
-        echo bundle -v; bundle -v
-
-        # List all installed gems
-        echo bundle list; bundle list
-
-        # Show detailed information about a specific gem
-        echo bundle show bundler; bundle show bundler
-
-        # Check if all required gems are installed
-        echo bundle check; bundle check
-
+        bundler-cache: true
     - name: Build site
-      run: |
-        rm -rf _site
-        mkdir -p _site/blog
-        bundle exec jekyll build --source . --destination _site --config _config.yml
-
-    - name: List files for debugging
-      run: ls -la . bin/ _site/ _drafts/
-
-    - name: Check date consistency in _posts
+      run: bundle exec jekyll build --config _config.yml
+    - name: Check date consistency
       run: bin/check_dates
-
-    - name: Upload Pages artifact
-      uses: actions/upload-pages-artifact@v3
+    - uses: actions/upload-pages-artifact@v3
       with:
         path: _site
 
@@ -71,8 +36,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-    - name: Deploy to GitHub Pages
+    - uses: actions/deploy-pages@v4
       id: deployment
-      uses: actions/deploy-pages@v4
