@@ -7,15 +7,21 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+
+    - name: Configure Pages
+      uses: actions/configure-pages@v5
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -35,17 +41,12 @@ jobs:
 
         # List all installed gems
         echo bundle list; bundle list
-        
+
         # Show detailed information about a specific gem
         echo bundle show bundler; bundle show bundler
-                
+
         # Check if all required gems are installed
         echo bundle check; bundle check
-
-        # Display the dependency tree
-        # echo bundle viz; bundle graph
-
-
 
     - name: Build site
       run: |
@@ -56,48 +57,22 @@ jobs:
     - name: List files for debugging
       run: ls -la . bin/ _site/ _drafts/
 
-    - name: Set permissions on _site
-      run: chmod -R a-w _site
-
-    # - name: Build site
-    #   run: bundle exec jekyll build
-
     - name: Check date consistency in _posts
       run: bin/check_dates
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages
-        publish_dir: _site
-        allow_empty_commit: false
-        keep_files: false
-        force_orphan: false
-        enable_jekyll: false
-        disable_nojekyll: false
+        path: _site
 
-    # - name: Deploy to GitHub Pages
-    #   uses: peaceiris/actions-gh-pages@v3
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_dir: _site
-    #     publish_branch: gh-pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-    # - name: Deploy to GitHub Pages
-    #   uses: peaceiris/actions-gh-pages@v3
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_dir: _site
-
-    # - name: Deploy to GitHub Pages
-    #   uses: actions/deploy-pages@v3
-    #   with:
-    #     branch: gh-pages
-    #     folder: _site
-
-    # - name: Deploy to GitHub Pages
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: site
-    #     path: _site/
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
