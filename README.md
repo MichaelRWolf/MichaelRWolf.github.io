@@ -22,6 +22,7 @@ For drafts and live reload, run Jekyll directly:
 bundle exec jekyll serve --livereload --drafts
 ```
 
+
 ## Theme
 
 This site uses [minima](https://github.com/jekyll/minima) — the default Jekyll
