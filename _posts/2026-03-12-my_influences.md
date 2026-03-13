@@ -1,7 +1,11 @@
-# My Influences
+---
+layout: post
+title: "My Influences"
+date: 2026-03-12
+tags: [SoftwareCraftsmanship, Community, Learning, OpenSource, TDD, Refactoring, DesignPatterns, Agile, LiberatingStructures, OpenSpaceTechnology, NVC, LeanCoffee, Emacs, Unix, Perl, Sustainability, Nature, Music, Collaboration, Communication, Books, Mentors, Philosophy, Practices, Fitness]
+---
 
-## TODO
-
+I am who I am today because of the people I know, what I have learned, and the experiences I have had.
 
 ## Intro
 
@@ -121,17 +125,17 @@ What I took from nature is not metaphor — it is *method*. Observe carefully. N
 
 ## References
 
-[^schwartz]: Schwartz, R. L., foy, b. d., & Phoenix, T. (2016). *Learning Perl* (7th ed.). O'Reilly Media. https://www.oreilly.com/library/view/learning-perl-7th/9781491954317/
+[^schwartz]: Schwartz, R. L., foy, b. d., & Phoenix, T. (2016). *Learning Perl* (7th ed.). O'Reilly Media. <https://www.oreilly.com/library/view/learning-perl-7th/9781491954317/>
 
 [^feathers]: Feathers, M. (2004). *Working effectively with legacy code.* Prentice Hall PTR.
 
 [^ls_book]: Lipmanowicz, H., & McCandless, K. (2014). *The surprising power of liberating structures: Simple rules to unleash a culture of innovation.* Liberating Structures Press.
 
-[^ls_web]: https://www.liberatingstructures.com
+[^ls_web]: <https://www.liberatingstructures.com>
 
-[^nvc]: Center for Nonviolent Communication. https://www.cnvc.org
+[^nvc]: Center for Nonviolent Communication. <https://www.cnvc.org>
 
-[^gnu]: Free Software Foundation. (1985). *The GNU Manifesto.* https://www.gnu.org/gnu/manifesto.html
+[^gnu]: Free Software Foundation. (1985). *The GNU Manifesto.* <https://www.gnu.org/gnu/manifesto.html>
 
 [^laloux]: Laloux, F. (2014). *Reinventing organizations: A guide to creating organizations inspired by the next stage in human consciousness.* Nelson Parker.
 
@@ -145,14 +149,14 @@ What I took from nature is not metaphor — it is *method*. Observe carefully. N
 
 [^ants]: Hölldobler, B., & Wilson, E. O. (1990). *The ants.* Harvard University Press.
 
-[^github]: https://github.com
+[^github]: <https://github.com>
 
-[^leancoffee]: http://leancoffee.org
+[^leancoffee]: <http://leancoffee.org>
 
 [^ost]: Owen, H. (2008). *Open space technology: A user's guide* (3rd ed.). Berrett-Koehler Publishers.
 
-[^aonw]: https://www.agileopennorthwest.org
+[^aonw]: <https://www.agileopennorthwest.org>
 
-[^np]: https://november-project.com
+[^np]: <https://november-project.com>
 
-[^sustainableballard]: Sustainable Ballard. (n.d.). *Neighbors working together for a strong and healthy community* [Home page]. https://www.sustainableballard.org/
+[^sustainableballard]: Sustainable Ballard. (n.d.). *Neighbors working together for a strong and healthy community* [Home page]. <https://www.sustainableballard.org/>
