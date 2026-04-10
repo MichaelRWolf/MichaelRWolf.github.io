@@ -64,4 +64,30 @@ bundle update minima
 
 ## Publishing
 
-Push `main` to GitHub. GitHub Pages builds and deploys automatically.
+For the full publish workflow (symlinks, front matter, commit conventions, cross-repo
+coordination), see the writing repo:
+[HOWTO\_publish\_blog\_post.md](https://github.com/MichaelRWolf/writing/blob/main/HOWTO_publish_blog_post.md)
+
+### Blog repo bookkeeping steps
+
+1. Preview locally before pushing:
+
+   ```shell
+   ./bin/serve_localhost_4000
+   ```
+
+   Or with drafts and live reload:
+
+   ```shell
+   bundle exec jekyll serve --livereload --drafts
+   ```
+
+2. Verify the post appears at <http://localhost:4000>
+
+3. Push to publish — GitHub Pages builds and deploys automatically:
+
+   ```shell
+   git push
+   ```
+
+4. Verify live at <https://MichaelRWolf.github.io>
