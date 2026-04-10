@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "My Influences"
+subtitle: "The people and ideas that shaped who I am (so far)"
 date: 2026-04-10
 tags: [SoftwareCraftsmanship, Community, Learning, OpenSource, TDD, Refactoring, DesignPatterns, Agile, LiberatingStructures, OpenSpaceTechnology, NVC, LeanCoffee, Emacs, Unix, Perl, Sustainability, Nature, Music, Collaboration, Communication, Books, Mentors, Philosophy, Practices, Fitness]
 image: /assets/images/my-influences.png
