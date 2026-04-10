@@ -66,7 +66,7 @@ bundle update minima
 
 For the full publish workflow (symlinks, front matter, commit conventions, cross-repo
 coordination), see the writing repo:
-[HOWTO\_publish\_blog\_post.md](https://github.com/MichaelRWolf/writing/blob/main/HOWTO_publish_blog_post.md)
+[HOWTO_publish_blog_post.md](https://github.com/MichaelRWolf/writing/blob/main/HOWTO_publish_blog_post.md)
 
 ### Blog repo bookkeeping steps
 
