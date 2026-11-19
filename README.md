@@ -22,11 +22,16 @@ Wolf, M. (2026, March 14). _Software Crafters UnConference — Spring 2026_ [Blo
 ./bin/serve_localhost_4000
 ```
 
-This script uses `chruby-exec` to run each command under Ruby 3.1.3, installs
-`bundler`, runs `bundle install`, starts Jekyll, and opens the browser.
+This script runs Homebrew's prebuilt `ruby@X.Y`, where `X.Y` comes from
+`.ruby-version`, then runs `bundle install`, starts Jekyll, and opens the browser.
 
-`.ruby-version` is also present for tools that read it automatically (Cursor's
-Ruby LSP, chruby `auto.sh`).
+`.ruby-version` is the single place the Ruby version is set. Local preview and
+the GitHub Actions build (`ruby/setup-ruby`) both read it. To upgrade:
+
+```shell
+brew install ruby@X.Y
+echo X.Y > .ruby-version
+```
 
 For drafts and live reload, run Jekyll directly:
 
