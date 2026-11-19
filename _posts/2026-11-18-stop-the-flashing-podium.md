@@ -12,7 +12,7 @@ typora-root-url: /Users/michael/repos/MichaelRWolf.github.io
 
 Does your conference podium flash at the audience?
 
-If so, then it is squandering attention that is not yours to redirect.
+If so, then you are squandering attention that is not yours to redirect.
 
 > _`[ >>> Squirrel. Redirect eyes. Lose context. ]`_
 >
