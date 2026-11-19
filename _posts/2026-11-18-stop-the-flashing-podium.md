@@ -20,7 +20,15 @@ If so, then it is squandering attention that is not yours to redirect.
 >
 > _`[ <<< Refocus. Pay context-switch penalty. Start rebuilding mental models. ]`_
 
-I noticed it watching [Michael Feathers at Craft Conference](https://www.youtube.com/watch?v=Mcsb4_7U-LY&t=2092s). I could not follow him until I restarted the video and covered the podium with my hand.
+If so,
+
+**STOP IT.**
+
+**STOP IT.**
+
+**STOP IT.**
+
+I noticed the problem while watching [Michael Feathers at Craft Conference](https://www.youtube.com/watch?v=Mcsb4_7U-LY&t=2092s). I could not follow him until I restarted the video and covered the podium with my hand.
 
 > _`[ >>> Squirrel (as above). ]`_
 >
